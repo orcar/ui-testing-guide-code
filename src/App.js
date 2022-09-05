@@ -1,8 +1,8 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import { InboxScreen } from './InboxScreen';
-import { LoginScreen } from './LoginScreen';
-import { theme } from './theme';
-import { useAuth } from './useAuth';
+import { ChakraProvider } from "@chakra-ui/react";
+import { InboxScreen } from "./InboxScreen";
+import { LoginScreen } from "./LoginScreen";
+import { theme } from "./theme";
+import { useAuth } from "./useAuth";
 
 function App() {
   const [user, logIn] = useAuth();
@@ -13,5 +13,7 @@ function App() {
     </ChakraProvider>
   );
 }
+
+// test
 
 export default App;
