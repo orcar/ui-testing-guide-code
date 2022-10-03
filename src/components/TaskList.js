@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { VStack, Skeleton, Flex, Spacer } from '@chakra-ui/react';
-import { CheckIcon, StarIcon } from '@chakra-ui/icons';
-import { Task } from './Task';
-import { EmptyState } from './EmptyState';
+import React from "react";
+import PropTypes from "prop-types";
+import { VStack, Skeleton, Flex, Spacer } from "@chakra-ui/react";
+import { CheckIcon, StarIcon } from "@chakra-ui/icons";
+import { Task } from "./Task";
+import { EmptyState } from "./EmptyState";
 
 const LoadingTask = () => (
   <Flex
     _notLast={{
-      borderBottom: '1px',
-      borderColor: 'gray.200',
+      borderBottom: "1px",
+      borderColor: "gray.200",
     }}
     bg="white"
     alignItems="center"
@@ -32,11 +32,13 @@ export function TaskList({
   onTogglePinTask,
   onArchiveTask,
   onEditTitle,
+  onDeleteTask,
 }) {
   const events = {
     onTogglePinTask,
     onArchiveTask,
     onEditTitle,
+    onDeleteTask,
   };
 
   if (loading) {
@@ -61,8 +63,8 @@ export function TaskList({
   }
 
   const tasksInOrder = [
-    ...tasks.filter((t) => t.state === 'TASK_PINNED'),
-    ...tasks.filter((t) => t.state !== 'TASK_PINNED'),
+    ...tasks.filter((t) => t.state === "TASK_PINNED"),
+    ...tasks.filter((t) => t.state !== "TASK_PINNED"),
   ];
 
   return (
@@ -80,6 +82,7 @@ TaskList.propTypes = {
   onTogglePinTask: PropTypes.func.isRequired,
   onArchiveTask: PropTypes.func.isRequired,
   onEditTitle: PropTypes.func.isRequired,
+  onDeleteTask: PropTypes.func.isRequired,
 };
 
 TaskList.defaultProps = {
